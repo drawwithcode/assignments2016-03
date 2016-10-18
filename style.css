@@ -1,0 +1,48 @@
+h1{
+    font-family: 'Source Sans Pro', sans-serif;
+    color: #ed225d;
+    font-weight: 900;
+    letter-spacing: 10px;
+    font-size: 40px;
+}
+
+body {
+    background-color: #323232;
+}
+
+#container {
+    width: 800px;
+    margin: 0 auto;
+}
+
+p.description {
+    color:#fff;
+    font-family: 'Crimson Text', serif;
+    
+    font-size: 24px;
+    font-style: italic;
+}
+
+p.name {
+    color: #fff;
+    font-family: 'Crimson Text', serif;
+    letter-spacing: 1px;
+    font-size: 18px;
+    border-top: solid 1px;
+    border-top-color: aliceblue;
+}
+
+.name a {
+    color: #fff;
+    font-family: 'Crimson Text', serif;
+    letter-spacing: 1px;
+    font-size: 18px;
+    border-top-color: aliceblue;
+}
+
+span.code {
+    color: #ed225d;
+    font-family: 'PT Mono', monospace;
+    font-size: 20px;
+    font-style: normal;
+}
