@@ -26,6 +26,7 @@ p.name {
     font-size: 18px;
     border-top: solid 1px;
     border-top-color: aliceblue;
+    text-overflow:ellipsis;
 
 }
 .name a {

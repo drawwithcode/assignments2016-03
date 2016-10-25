@@ -69,26 +69,36 @@
     <script src="https://d3js.org/d3.v4.min.js"></script>
 
     <script>
-      
+    var initialElm;
     d3.tsv('assignments/list.tsv', function(list) {
       if (list.length > 0) {
         list.forEach(function(i){
-            var iframe = "setInfo('/assignments/"+i.name+"/index.html', '"+i.link+"', '"+i.name.toLowerCase()+"')";
+            var iframe = "setInfo('/assignments/"+i.name+"/index.html', '"+i.link+"', '"+i.nameDisplay.toLowerCase()+"')";
             var thumb = "background-image: url('./assignments/"+i.name+"/thumb.png')"
-            var newElement = '<div class="col-xs-6 col-sm-3" onclick="'+iframe+'"><p class="name"><a href='+ i.link +'>'+i.name.toLowerCase()+'</a></p><div class="sketch-thumb img-thumbnail" style="'+thumb+'"></div></div>';
+            var newElement = '<div class="col-xs-6 col-sm-4 col-md-3" onclick="'+iframe+'"><p class="name"><a href='+ i.link +'>'+i.nameDisplay.toLowerCase()+'</a></p><div class="sketch-thumb img-thumbnail" style="'+thumb+'"></div></div>';
             var currentHtml = d3.select('#projects-gallery').html()
             currentHtml += newElement
             d3.select('#projects-gallery').html(currentHtml)
         })
+
+        initialElm = list[Math.floor(Math.random() * list.length)];
+
+        setInfo("/assignments/"+initialElm.name+"/index.html", initialElm.link, initialElm.nameDisplay.toLowerCase())
+
+
       }
     })
 
-      function setInfo(newPath, newLink, newName) {
+    function setInfo(newPath, newLink, newName) {
         $('#sketches-container').attr('src', newPath);
         d3.select('#author a')
             .html(newName)
             .attr('href', newLink)
-  }
+    }
+
+
+
+
 
     </script>
 
