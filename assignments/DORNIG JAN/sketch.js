@@ -3,7 +3,7 @@ var s = 0
 
 
 function setup() {
-  createCanvas(800, 500)
+  createCanvas(800, 800)
   rectMode(CENTER)
 }
 
