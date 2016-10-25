@@ -79,7 +79,11 @@
     <script>
       
     d3.tsv('assignments/list.tsv', function(list) {
-      console.log(list)
+      if (list.length > 0) {
+        list.forEach(function(i){
+            console.log(i)
+        })
+      }
     })
     
 
